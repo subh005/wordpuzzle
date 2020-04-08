@@ -18,7 +18,7 @@ h1{width:70px; margin-bottom:10px; padding:5px; background-color: #eee; border:1
 <body>
   <div class="header">Word Puzzle</div>
   <h1><time>00:00:00</time></h1>
-  <div class="textContainer">Find Words: IsroA | Saral | Tbd | Aditya | Astrosat</div>
+  <div class="textContainer">Find Words: Isro | Saral | Tbd | Aditya | Astrosat</div>
    <div class="textContainer">Note: Click on the first word and drag straight or diagonal to the last word & then leave.</div>
 <div class="container"><canvas id="canvas" width=370 height=370></canvas></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -152,7 +152,7 @@ $("#canvas").mousemove(function(e){handleMouseMove(e);});
 $("#canvas").mouseup(function(e){handleMouseUpOut(e);});
 $("#canvas").mouseout(function(e){handleMouseUpOut(e);});
   
-$('#canvas').on('touchstart', function(e){
+/*$('#canvas').on('touchstart', function(e){
        startX=parseInt(e.clientX-offsetX);
   startY=parseInt(e.clientY-offsetY);
   isDown=true;
@@ -168,7 +168,7 @@ $('#canvas').on('touchstart', function(e){
 
   solutionCheck();
     });
-
+*/
   
 var timetag = document.getElementsByTagName('h1')[0],
     seconds = 0, minutes = 0, hours = 0,
