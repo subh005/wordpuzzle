@@ -153,23 +153,11 @@ $("#canvas").mouseup(function(e){handleMouseUpOut(e);});
 $("#canvas").mouseout(function(e){handleMouseUpOut(e);});
   
 $("#canvas").touchstart(function(e){
-       e.preventDefault();
-  e.stopPropagation();
-startX=parseInt(e.clientX-offsetX);
-  startY=parseInt(e.clientY-offsetY);
-  isDown=true;
+      alert('test');
     });
 
     $("#canvas").touchend(function(e){
-        isDown=false;
-  e.preventDefault();
-  e.stopPropagation();
-
-  endX=parseInt(e.clientX-offsetX);
-  endY=parseInt(e.clientY-offsetY);
-
-
-  solutionCheck();
+    alert('test2');
     });
 
   
