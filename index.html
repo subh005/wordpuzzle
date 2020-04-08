@@ -152,13 +152,8 @@ $("#canvas").mousemove(function(e){handleMouseMove(e);});
 $("#canvas").mouseup(function(e){handleMouseUpOut(e);});
 $("#canvas").mouseout(function(e){handleMouseUpOut(e);});
   
-$("#canvas").touchstart(function(e){
-      alert('test');
-    });
-
-    $("#canvas").touchend(function(e){
-    alert('test2');
-    });
+document.getElementById("canvas").addEventListener("touchstart", handleMouseUpOut(e));
+  document.getElementById("canvas").addEventListener("touchend", handleMouseUpOut(e));
 
   
 var timetag = document.getElementsByTagName('h1')[0],
