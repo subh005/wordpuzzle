@@ -152,7 +152,7 @@ $("#canvas").mousemove(function(e){handleMouseMove(e);});
 $("#canvas").mouseup(function(e){handleMouseUpOut(e);});
 $("#canvas").mouseout(function(e){handleMouseUpOut(e);});
   
-document.getElementById("canvas").addEventListener("touchstart", handleMouseUpOut(e));
+document.getElementById("canvas").addEventListener("touchstart", handleMouseDown(e));
   document.getElementById("canvas").addEventListener("touchend", handleMouseUpOut(e));
 
   
