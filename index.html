@@ -1,0 +1,185 @@
+<!Doctype html>
+<html lang="en">
+<head>
+<title>Word Puzzle</title>
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+<style type="text/css">
+body{ font-family: 'Roboto', sans-serif; color:#383838;}
+.header{ padding:20px 0px;  font-size: 34px; text-align:center; color:#fff; font-weight:bold; border-bottom:1px solid #eee; box-shadow: 1px 1px 1px #eee; background-color: #2874f0; margin-bottom: 20px; text-transform: uppercase;}
+.container{width:370px; margin: auto;}
+#canvas{border:2px solid #000; background-color: #eee;}
+h1{width:70px; margin-bottom:10px; padding:5px; background-color: #eee; border:1px solid #999; font-size: 18px; font-weight: normal; margin:auto;}
+.textContainer{width:100%; margin:10px 0; text-align: center; line-height:25px; font-weight: bold; }
+}
+  
+</style>
+</head>
+<body>
+  <div class="header">Word Puzzle</div>
+  <h1><time>00:00:00</time></h1>
+  <div class="textContainer">Find Words: Isro | Saral | Tbd | Aditya | Astrosat</div>
+   <div class="textContainer">Note: Click on the first word and drag straight or diagonal to the last word & then leave.</div>
+<div class="container"><canvas id="canvas" width=370 height=370></canvas></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+  var canvas=document.getElementById("canvas");
+var ctx=canvas.getContext("2d");
+var cw=canvas.width;
+var ch=canvas.height;
+function reOffset(){
+  var BB=canvas.getBoundingClientRect();
+  offsetX=BB.left;
+  offsetY=BB.top;        
+}
+var offsetX,offsetY;
+reOffset();
+window.onscroll=function(e){ reOffset(); }
+
+var isDown=false;
+var startX,startY,endX,endY;
+
+var rows=9;
+var cols=9;
+var cellWidth=40;
+var cellHeight=40;
+
+var letters = ['g', 'b', 's', 'i', 'c', 'e', 'n', 't', 'u',
+'o', 'i', 'u', 'w', 'v', 'r', 'a', 'k', 'o',
+'k', 's', 'i', 't', 'o', 's', 'd', 'l', 'e',
+ 'd', 'r', 'm', 'c', 'o', 'a', 'y', 'l', 'h',
+  'h', 'o', 'p', 'r', 's', 'e', 'p', 'a', 'i',
+   'k', 'k', 't', 'b', 'z', 'i', 'p', 'r', 'm',
+   'p', 's', 'r', 't', 'b', 'd', 'a','a', 'o',
+   'a', 't', 'a', 'm', 'd', 'e', 'h','s', 'p',
+   'p', 'a', 'd', 'i', 't', 'y', 'a','l', 'o'];
+
+var solutions=[];
+solutions.push({start:{col:1,row:1},end:{col:1,row:4},color:'purple',word:'isro',isSolved:false});
+solutions.push({start:{col:0,row:7},end:{col:7,row:0},color:'green',word:'astrosat',isSolved:false});
+solutions.push({start:{col:1,row:8},end:{col:6,row:8},color:'blue',word:'aditya',isSolved:false});
+solutions.push({start:{col:3,row:6},end:{col:5,row:6},color:'red',word:'tbd',isSolved:false});
+solutions.push({start:{col:7,row:7},end:{col:7,row:3},color:'brown',word:'saral',isSolved:false});
+
+ctx.lineCap = "round";
+ctx.lineWidth=20;
+ctx.font='14px Arial';
+ctx.textAlign='center';
+ctx.textBaseline='middle';
+
+drawLetters(letters);
+
+highlightSolvedWords();
+
+function solutionCheck(){
+  var col0=parseInt(startX/cellWidth);
+  var row0=parseInt(startY/cellHeight);
+  var col1=parseInt(endX/cellWidth);
+  var row1=parseInt(endY/cellHeight);
+  for(var i=0;i<solutions.length;i++){
+    var s=solutions[i];
+    var index=-1;
+    if(s.start.col==col0 && s.start.row==row0 && s.end.col==col1 && s.end.row==row1){
+      index=i;
+    }
+    if(s.start.col==col1 && s.start.row==row1 && s.end.col==col0 && s.end.row==row0){
+      index=i;
+    }
+    if(index>=0){
+      solutions[index].isSolved=true;
+      highlightWord(solutions[index]);
+    }
+  }
+}
+
+function highlightSolvedWords(){
+  for(var i=0;i<solutions.length;i++){
+    var solution=solutions[i];
+    if(solution.isSolved){
+      highlightWord(solution);
+    }
+  }
+}
+
+function drawLetters(letters){
+  ctx.fillStyle='black';
+  for(var i=0;i<letters.length;i++){
+    var row=parseInt(i/cols);
+    var col=i-row*cols;
+    ctx.fillText(letters[i],col*cellWidth+cellWidth/2,row*cellHeight+cellHeight/2);
+  }
+}
+
+function highlightWord(word){
+  var x0=word.start.col*cellWidth+cellWidth/2;
+  var y0=word.start.row*cellHeight+cellHeight/2;
+  var x1=word.end.col*cellWidth+cellWidth/2;
+  var y1=word.end.row*cellHeight+cellHeight/2;
+  ctx.beginPath();
+  ctx.moveTo(x0,y0);
+  ctx.lineTo(x1,y1);
+  ctx.strokeStyle=word.color;
+  ctx.globalAlpha=0.25;
+  ctx.stroke();
+  ctx.globalAlpha=1.00;
+}
+
+
+function handleMouseDown(e){
+  e.preventDefault();
+  e.stopPropagation();
+startX=parseInt(e.clientX-offsetX);
+  startY=parseInt(e.clientY-offsetY);
+  isDown=true;
+}
+
+function handleMouseUpOut(e){
+  isDown=false;
+  e.preventDefault();
+  e.stopPropagation();
+
+  endX=parseInt(e.clientX-offsetX);
+  endY=parseInt(e.clientY-offsetY);
+
+
+  solutionCheck();
+
+}
+
+
+$("#canvas").mousedown(function(e){handleMouseDown(e);});
+$("#canvas").mousemove(function(e){handleMouseMove(e);});
+$("#canvas").mouseup(function(e){handleMouseUpOut(e);});
+$("#canvas").mouseout(function(e){handleMouseUpOut(e);});
+  
+
+var timetag = document.getElementsByTagName('h1')[0],
+    seconds = 0, minutes = 0, hours = 0,
+    t;
+
+function add() {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        minutes++;
+        if (minutes >= 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+    
+    timetag.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+
+    timer();
+}
+function timer() {
+    t = setTimeout(add, 1000);
+}
+timer();
+
+
+
+  </script>
+</body>
+</html>
+
