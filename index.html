@@ -1,7 +1,7 @@
 <!Doctype html>
 <html lang="en">
 <head>
-<title>Word Puzzle</title>
+<title>Word Hunt</title>
 <meta content="width=device-width, initial-scale=1" name="viewport" />
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 <style type="text/css">
@@ -16,9 +16,8 @@ h1{width:70px; margin-bottom:10px; padding:5px; background-color: #eee; border:1
 </style>
 </head>
 <body>
-  <div class="header">Word Puzzle</div>
+  <div class="header">Word Hunt</div>
   <h1><time>00:00:00</time></h1>
-  <div class="textContainer">Find Words: ISRO | SARAL | TBD | ADITYA | ASTROSAT</div>
    <div class="textContainer">Note: Click on the first letter and then drag the mouse straight or diagonal to highlight the word.</div>
 <div class="container"><canvas id="canvas" width=370 height=370></canvas></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -50,7 +49,7 @@ var letters = ['g', 'b', 's', 'i', 'c', 'e', 'n', 't', 'u',
  'd', 'r', 'm', 'c', 'o', 'a', 'y', 'l', 'h',
   'h', 'o', 'p', 'r', 's', 'e', 'p', 'a', 'i',
    'k', 'k', 't', 'b', 'z', 'i', 'p', 'r', 'm',
-   'p', 's', 'r', 't', 'b', 'd', 'a','a', 'o',
+   'p', 's', 'g', 's', 'a', 't', 'a','a', 'o',
    'a', 't', 'a', 'm', 'd', 'e', 'h','s', 'p',
    'p', 'a', 'd', 'i', 't', 'y', 'a','l', 'o'];
 
@@ -58,7 +57,7 @@ var solutions=[];
 solutions.push({start:{col:1,row:1},end:{col:1,row:4},color:'purple',word:'isro',isSolved:false});
 solutions.push({start:{col:0,row:7},end:{col:7,row:0},color:'green',word:'astrosat',isSolved:false});
 solutions.push({start:{col:1,row:8},end:{col:6,row:8},color:'blue',word:'aditya',isSolved:false});
-solutions.push({start:{col:3,row:6},end:{col:5,row:6},color:'red',word:'tbd',isSolved:false});
+solutions.push({start:{col:2,row:6},end:{col:5,row:6},color:'red',word:'gsat',isSolved:false});
 solutions.push({start:{col:7,row:7},end:{col:7,row:3},color:'brown',word:'saral',isSolved:false});
 
 ctx.lineCap = "round";
