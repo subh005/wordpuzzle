@@ -7,7 +7,7 @@
 <style type="text/css">
 body{ font-family: 'Roboto', sans-serif; color:#383838;}
 .header{ padding:20px 0px;  font-size: 34px; text-align:center; color:#fff; font-weight:bold; border-bottom:1px solid #eee; box-shadow: 1px 1px 1px #eee; background-color: #2874f0; margin-bottom: 20px; text-transform: uppercase;}
-.container{width:370px; margin: auto;}
+.container{width:410px; margin: auto;}
 #canvas{border:2px solid #000; background-color: #eee;}
 h1{width:70px; margin-bottom:10px; padding:5px; background-color: #eee; border:1px solid #999; font-size: 18px; font-weight: normal; margin:auto;}
 .textContainer{width:100%; margin:10px 0; text-align: center; line-height:25px; font-weight: bold; }
@@ -19,7 +19,7 @@ h1{width:70px; margin-bottom:10px; padding:5px; background-color: #eee; border:1
   <div class="header">Word Hunt</div>
   <h1><time>00:00:00</time></h1>
    <div class="textContainer">Note: Click on the first letter and then drag the mouse straight or diagonal to highlight the word.</div>
-<div class="container"><canvas id="canvas" width=370 height=370></canvas></div>
+<div class="container"><canvas id="canvas" width=410 height=370></canvas></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript">
   var canvas=document.getElementById("canvas");
@@ -39,26 +39,26 @@ var isDown=false;
 var startX,startY,endX,endY;
 
 var rows=9;
-var cols=9;
+var cols=10;
 var cellWidth=40;
 var cellHeight=40;
 
-var letters = ['e', 'r', 'o', 'h', 's', 'a', 'e', 's', 'u',
-'l', 'a', 'a', 'a', 's', 'h', 'o', 'a', 'e',
-'k', 'c', 'r', 'i', 's', 'h', 'u', 'u', 'e',
- 'd', 'r', 'o', 'o', 'o', 'a', 'y', 't', 'h',
-  'h', 'o', 'p', 'r', 'r', 'e', 'p', 'u', 'i',
-   'k', 'k', 't', 't', 'a', 'u', 'p', 'm', 'm',
-   'i', 'd', 'a', 'g', 'u', 'l', 'a','n', 'o',
-   't', 'n', 'e', 'm', 'h', 'c', 't','a', 'c',
-   'p', 'a', 'u', 'r', 't', 'y', 'a','i', 'o'];
+var letters = ['e', 'r', 'o', 'h', 's', 'a', 'a', 'e', 'u','u',
+'l', 'm', 'a', 'a', 'e', 'h', 'u', 'a', 'e','y',
+'k', 'c', 'r', 'e', 's', 'p', 'u', 'u', 'n','g,
+ 'd', 'r', 'l', 'o', 'h', 'a', 'y', 't', 's','l',
+  'h', 'g', 'p', 'o', 'r', 'e', 'p', 'u', 's','z',
+   'k', 'k', 'r', 'm', 'e', 'r', 'r', 'y', 'i','a',
+   'i', 'i', 'a', 'g', 'u', 'l', 'a','n', 'l','f',
+   'a', 'n', 'e', 'm', 'h', 'c', 't','a', 'b','h',
+   'n', 'o', 'i', 't', 'a', 'l', 'i','b', 'u','j'];
 
 var solutions=[];
-solutions.push({start:{col:7,row:0},end:{col:0,row:0},color:'purple',word:'seashore',isSolved:false});
-solutions.push({start:{col:8,row:7},end:{col:0,row:7},color:'green',word:'catchment',isSolved:false});
-solutions.push({start:{col:7,row:1},end:{col:7,row:6},color:'blue',word:'autumn',isSolved:false});
-solutions.push({start:{col:1,row:2},end:{col:5,row:6},color:'red',word:'coral',isSolved:false});
-solutions.push({start:{col:6,row:6},end:{col:1,row:1},color:'brown',word:'aurora',isSolved:false});
+solutions.push({start:{col:9,row:8},end:{col:0,row:8},color:'purple',word:'jubilation',isSolved:false});
+solutions.push({start:{col:7,row:0},end:{col:0,row:7},color:'green',word:'euphoria',isSolved:false});
+solutions.push({start:{col:3,row:5},end:{col:7,row:5},color:'blue',word:'merry',isSolved:false});
+solutions.push({start:{col:8,row:7},end:{col:8,row:3},color:'red',word:'bliss',isSolved:false});
+solutions.push({start:{col:1,row:4},end:{col:4,row:1},color:'brown',word:'glee',isSolved:false});
 
 ctx.lineCap = "round";
 ctx.lineWidth=20;
