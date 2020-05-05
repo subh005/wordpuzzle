@@ -43,22 +43,22 @@ var cols=10;
 var cellWidth=40;
 var cellHeight=40;
 
-var letters = ['e', 'r', 'o', 'h', 's', 'a', 'a', 'e', 'u','u',
-'l', 'm', 'a', 'a', 'e', 'h', 'u', 'a', 'e','y',
-'k', 'c', 'r', 'e', 's', 'p', 'u', 'u', 'n','g',
- 'd', 'r', 'l', 'o', 'h', 'a', 'y', 't', 's','l',
-  'h', 'g', 'p', 'o', 'r', 'e', 'p', 'u', 's','z',
-   'k', 'k', 'r', 'm', 'e', 'r', 'r', 'y', 'i','a',
-   'i', 'i', 'a', 'g', 'u', 'l', 'a','n', 'l','f',
-   'a', 'n', 'e', 'm', 'h', 'c', 't','a', 'b','h',
-   'n', 'o', 'i', 't', 'a', 'l', 'i','b', 'u','j'];
+var letters = ['e', 'r', 'o', 'h', 's', 'a', 'a', 'e', 'a','e',
+'e', 'n', 'g', 'a', 'p', 'm', 'a', 'h', 'c','h',
+'k', 'a', 'r', 'e', 's', 'p', 'u', 'u', 'n','t',
+ 'd', 'r', 'l', 's', 'h', 'e', 'r', 'r', 'y','n',
+  'h', 'e', 'p', 'i', 's', 'h', 'e', 'r', 's','i',
+   'k', 'k', 'r', 'm', 'u', 'r', 's', 'y', 'i','s',
+   'i', 'a', 'a', 'g', 'u', 'q', 'a','b', 'l','b',
+   'a', 's', 'e', 'm', 's', 'c', 'e','a', 'a','a',
+   'n', 'o', 'i', 't', 'a', 'l', 'i','t', 'u','j'];
 
 var solutions=[];
-solutions.push({start:{col:9,row:8},end:{col:0,row:8},color:'purple',word:'jubilation',isSolved:false});
-solutions.push({start:{col:7,row:0},end:{col:0,row:7},color:'green',word:'euphoria',isSolved:false});
-solutions.push({start:{col:3,row:5},end:{col:7,row:5},color:'blue',word:'merry',isSolved:false});
-solutions.push({start:{col:8,row:7},end:{col:8,row:3},color:'red',word:'bliss',isSolved:false});
-solutions.push({start:{col:1,row:4},end:{col:4,row:1},color:'brown',word:'glee',isSolved:false});
+solutions.push({start:{col:9,row:7},end:{col:9,row:0},color:'purple',word:'absinthe',isSolved:false});
+solutions.push({start:{col:3,row:3},end:{col:8,row:3},color:'green',word:'sherry',isSolved:false});
+solutions.push({start:{col:7,row:8},end:{col:1,row:2},color:'blue',word:'tequila',isSolved:false});
+solutions.push({start:{col:8,row:1},end:{col:0,row:1},color:'red',word:'champagne',isSolved:false});
+solutions.push({start:{col:1,row:7},end:{col:1,row:4},color:'brown',word:'sake',isSolved:false});
 
 ctx.lineCap = "round";
 ctx.lineWidth=20;
