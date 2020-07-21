@@ -43,22 +43,22 @@ var cols=10;
 var cellWidth=40;
 var cellHeight=40;
 
-var letters = ['e', 'r', 'j', 'h', 'n', 'k', 'a', 'i', 'o','u',
-'y', 'p', 'l', 'a', 'y', 'f', 'u', 'l', 'h','r',
-'w', 'h', 't', 'u', 'o', 'l', 't', 'r', 'a','d',
- 'd', 'p', 'a', 'c', 'r', 's', 'd', 'e', 'r','t',
-  's', 'y', 'u', 'r', 'b', 'w', 'r', 'd', 'v','n',
-   'f', 'c', 'o', 'r', 'n', 'a', 'l', 'l', 'u','a',
-   'i', 'e', 'g', 'a', 'r', 'p', 'u','a', 'r','c',
-   'a', 'i', 'b', 'm', 'u', 'p', 'o','c', 'd','a',
-   'n', 'i', 'i', 'n', 'e', 't', 't','i', 'k','j'];
+var letters = ['e', 'r', 'j', 'h', 'n', 'k', 'a', 'i', 'o','s',
+'y', 'p', 'l', 'a', 'y', 'f', 'u', 'l', 'r','m',
+'w', 'i', 't', 'u', 'o', 'l', 'z', 'e', 'a','a',
+ 'd', 'c', 'a', 'c', 'r', 'e', 'u', 'e', 'r','i',
+  's', 'a', 'u', 'r', 'h', 't', 'r', 'd', 'v','l',
+   'f', 'r', 'o', 'c', 'e', 'a', 'l', 'l', 'u','l',
+   'i', 'd', 'n', 'r', 'r', 'p', 'u','a', 'r','i',
+   'a', 'a', 'b', 'm', 'u', 'p', 'o','c', 'd','w',
+   's', 'i', 's', 'n', 'e', 'v', 'e','t', 's','j'];
 
 var solutions=[];
-solutions.push({start:{col:8,row:8},end:{col:3,row:8},color:'purple',word:'kitten',isSolved:false});
-solutions.push({start:{col:1,row:1},end:{col:7,row:1},color:'green',word:'playful',isSolved:false});
-solutions.push({start:{col:5,row:6},end:{col:5,row:3},color:'blue',word:'paws',isSolved:false});
-solutions.push({start:{col:1,row:3},end:{col:4,row:6},color:'red',word:'purr',isSolved:false});
-solutions.push({start:{col:9,row:6},end:{col:4,row:1},color:'brown',word:'cuddly',isSolved:false});
+solutions.push({start:{col:1,row:1},end:{col:1,row:6},color:'purple',word:'picard',isSolved:false});
+solutions.push({start:{col:0,row:8},end:{col:6,row:2},color:'green',word:'sanchez',isSolved:false});
+solutions.push({start:{col:8,row:1},end:{col:3,row:6},color:'blue',word:'Reuter',isSolved:false});
+solutions.push({start:{col:9,row:7},end:{col:9,row:0},color:'red',word:'Williams',isSolved:false});
+solutions.push({start:{col:8,row:8},end:{col:2,row:8},color:'brown',word:'Stevens',isSolved:false});
 
 ctx.lineCap = "round";
 ctx.lineWidth=20;
