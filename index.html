@@ -43,22 +43,23 @@ var cols=10;
 var cellWidth=40;
 var cellHeight=40;
 
-var letters = ['e', 'r', 'j', 'h', 'n', 'k', 'a', 'i', 'o','s',
-'y', 'p', 'l', 'a', 'y', 'f', 'u', 'l', 'r','m',
-'w', 'i', 't', 'u', 'o', 'l', 'z', 'e', 'a','a',
- 'd', 'c', 'a', 'c', 'r', 'e', 'u', 'e', 'r','i',
-  's', 'a', 'u', 'r', 'h', 't', 'r', 'd', 'v','l',
-   'f', 'r', 'o', 'c', 'e', 'a', 'l', 'l', 'u','l',
-   'i', 'd', 'n', 'r', 'r', 'p', 'u','a', 'r','i',
-   'a', 'a', 'b', 'm', 'u', 'p', 'o','c', 'd','w',
+var letters = [
+'e', 'r', 'j', 'h', 'n', 'k', 's', 'i', 'o','s',
+'y', 'h', 'l', 'a', 'y', 'f', 'u', 'l', 'r','m',
+'w', 'i', 't', 'u', 'o', 'l', 'l', 'e', 'a','a',
+ 'd', 'c', 'a', 'w', 'r', 'e', 'o', 'u', 'r','i',
+  's', 'a', 'u', 'r', 'r', 't', 'e', 'd', 'b','l',
+   'f', 'r', 'o', 'c', 'e', 'c', 'a', 'l', 'u','a',
+   'i', 't', 'h', 'e', 'r', 'e', 'm','i', 'n','i',
+   'o', 'o', 'd', 'i', 'r', 'e', 'g','d', 'i','d',
    's', 'i', 's', 'n', 'e', 'v', 'e','t', 's','j'];
 
 var solutions=[];
-solutions.push({start:{col:1,row:1},end:{col:1,row:6},color:'purple',word:'picard',isSolved:false});
-solutions.push({start:{col:0,row:8},end:{col:6,row:2},color:'green',word:'sanchez',isSolved:false});
-solutions.push({start:{col:8,row:1},end:{col:3,row:6},color:'blue',word:'Reuter',isSolved:false});
-solutions.push({start:{col:9,row:7},end:{col:9,row:0},color:'red',word:'Williams',isSolved:false});
-solutions.push({start:{col:8,row:8},end:{col:2,row:8},color:'brown',word:'Stevens',isSolved:false});
+solutions.push({start:{col:5,row:1},end:{col:9,row:5},color:'purple',word:'fluba',isSolved:false});
+solutions.push({start:{col:1,row:6},end:{col:8,row:6},color:'green',word:'theremin',isSolved:false});
+solutions.push({start:{col:9,row:7},end:{col:0,row:7},color:'blue',word:'didgeridoo',isSolved:false});
+solutions.push({start:{col:6,row:5},end:{col:6,row:0},color:'red',word:'aeolus',isSolved:false});
+solutions.push({start:{col:5,row:5},end:{col:1,row:1},color:'brown',word:'crwth',isSolved:false});
 
 ctx.lineCap = "round";
 ctx.lineWidth=20;
