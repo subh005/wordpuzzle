@@ -44,23 +44,22 @@ var cellWidth=40;
 var cellHeight=40;
 
 var letters = [
-'e', 'h', 'j', 'e', 'n', 'g', 's', 'i', 's','s',
-'y', 'm', 'o', 'y', 'o', 'e', 's', 'l', 's','m',
-'w', 'h', 'u', 'm', 'a', 'n', 'e', 't', 'p','d',
- 'd', 'm', 'o', 'n', 'r', 'e', 'o', 'u', 'e','i',
-  'n', 'c', 'i', 'k', 'e', 'r', 's', 'i', 'm','l',
-   'c', 'h', 'i', 'e', 'r', 'o', 'k', 'l', 'p','a',
-   'n', 'n', 'h', 'y', 'r', 'u', 'm','i', 'a','i',
-   'd', 'd', 'e', 't', 'h', 's', 'i','l', 't','d',
-   'e', 'l', 'b', 'a', 't', 'i', 'r','a', 'h','c'];
+'e', 'h', 'j', 'e', 'n', 'g', 's', 'i', 's','d',
+'y', 'c', 'i', 't', 'a', 't', 's', 'c', 'e','e',
+'w', 'h', 'u', 'm', 'a', 'n', 'h', 't', 'p','t',
+ 'd', 'm', 'o', 'd', 'r', 'e', 'o', 'u', 'e','h',
+  'd', 'e', 't', 'n', 'e', 't', 'n', 'o', 'c','g',
+   'c', 'h', 'i', 'r', 'r', 't', 'k', 'l', 'p','i',
+   'n', 'n', 'f', 'y', 'r', 'u', 'a','i', 'a','l',
+   'd', 'u', 'e', 't', 'h', 's', 'i','l', 't','e',
+   'l', 'l', 'b', 'a', 't', 'i', 'r','a', 'e','d'];
 
 var solutions=[];
-solutions.push({start:{col:1,row:2},end:{col:6,row:2},color:'purple',word:'Humane',isSolved:false});
-solutions.push({start:{col:3,row:4},end:{col:0,row:7},color:'green',word:'Kind',isSolved:false});
-solutions.push({start:{col:5,row:0},end:{col:5,row:7},color:'blue',word:'Generous',isSolved:false});
-solutions.push({start:{col:9,row:8},end:{col:0,row:8},color:'red',word:'Charitable',isSolved:false});
-solutions.push({start:{col:8,row:3},end:{col:8,row:8},color:'brown',word:'Empath',isSolved:false});
-
+solutions.push({start:{col:7,row:1},end:{col:0,row:8},color:'purple',word:'Cheerful',isSolved:false});
+solutions.push({start:{col:8,row:4},end:{col:0,row:4},color:'green',word:'Contented',isSolved:false});
+solutions.push({start:{col:9,row:8},end:{col:9,row:0},color:'blue',word:'Delighted',isSolved:false});
+solutions.push({start:{col:8,row:1},end:{col:1,row:1},color:'red',word:'Ecstatic',isSolved:false});
+solutions.push({start:{col:8,row:8},end:{col:3,row:3},color:'brown',word:'Elated',isSolved:false});
 
 ctx.lineCap = "round";
 ctx.lineWidth=20;
